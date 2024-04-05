@@ -1,0 +1,177 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+install.packages(Rmisc)
+install.packages("data.table")
+install.packages("stringr")
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("readxl")
+install.packages("tibble")
+
+options(scipen = 999)
+---
+title: "Untitled"
+author: "Myeongju"
+date: "2024-01-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressPackageStartupMessages(library(Rmisc))
+suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(readxl))
+suppressPackageStartupMessages(library(tibble))
+options(scipen=999)
+```
+
+
+## GEI data
+
+# Defining a new function
+This enables us to subset later in a way such that we only keep the data which doesn't include the specified values.
+
+```{r}
+`%notin%` <- Negate(`%in%`)
+```
+
+# loading GEI data
+```{r pressure, echo=FALSE}
+df_gei <- read.csv("combined_df1_1950_2021.csv")
+names(df_gei)
+```
+# correcting country names containing a period: Central African Republic, Costa Rica, Dominican Republic, El Salvador, New Zealand, Saudi Arabia, Sierra Leone, South Africa, South Korea, Sri Lanka, Trinidad and Tobago, United Arab Emirates, United Kingdom, United States, 
+```{r}
+colnames(df_gei)[31] <- "Central African Republic"
+colnames(df_gei)[88] <- "Costa Rica"
+colnames(df_gei)[62] <- "Dominican Republic"
+colnames(df_gei)[48] <- "El Salvador"
+colnames(df_gei)[83] <- "New Zealand"
+colnames(df_gei)[9] <- "Saudi Arabia"
+colnames(df_gei)[76] <- "Sierra Leone"
+colnames(df_gei)[102] <- "South Africa"
+colnames(df_gei)[23] <- "South Korea"
+colnames(df_gei)[92] <- "Sri Lanka"
+colnames(df_gei)[29] <- "Trinidad and Tobago"
+colnames(df_gei)[82] <- "United Arab Emirates"
+colnames(df_gei)[14] <- "United Kingdom"
+colnames(df_gei)[85] <- "United States"
+
+names(df_gei)
+```
+
+#calculating means and sd of each country's GEI over the years
+```{r}
+country_means <- as.data.frame(colMeans(df_gei[, 2:115], na.rm = TRUE))
+colnames(country_means) <- "GEI_Means"
+
+country_sd <- as.data.frame(sapply(df_gei[,2:115], sd, na.rm = TRUE))
+colnames(country_sd) <- "GEI_SD"
+```
+
+#merging the means and sd of each country's GEI
+```{r}
+country_stat <- merge(country_means, country_sd, by = "row.names", all = TRUE)
+colnames(country_stat)[1] <- "Country"
+```
+
+#plotting the means: according to the distribution, I don't think we need to filter outliers.
+```{r}
+plot(density(country_stat$`Means`, na.rm=TRUE))
+```
+
+#checking the summary of averaged GEI of the countries
+```{r}
+summary(country_stat)
+```
+
+#using the averaged GEI - Min: 51.21 / 1st Quarter: 62.02 / Mean: 66.06 / 3rd Quarter: 70.77 / Max: 80.64, categorizing the countries into high/medium/low gender equality status.
+```{r}
+country_stat <- country_stat %>%
+  mutate(GE_status = case_when(
+    GEI_Means < 62.02 ~ "Low",
+    GEI_Means >= 62.02 & GEI_Means < 70.77 ~ "Medium",
+    GEI_Means >= 70.77 ~ "High"
+  ))
+```
+
+#transposing the GEI data to filter the countries, tidying up the column/row names
+```{r}
+transposed_gei <- as.data.frame(t(df_gei))
+
+colnames(transposed_gei) <- transposed_gei[1, ]
+transposed_gei <- transposed_gei[-1, ]
+
+transposed_gei <- tibble::rownames_to_column(transposed_gei, "Country")
+```
+
+#merging the GE status categories to the GEI data
+```{r}
+transposed_gei_cat <- merge(transposed_gei, country_stat, by = "Country", all = TRUE)
+transposed_gei_cat <- transposed_gei_cat[, c(1, 76, 2:75)]
+```
+
+#transposing the GEI data back again
+```{r}
+df_gei_cat <- as.data.frame(t(transposed_gei_cat))
+```
+
+```{r}
+colnames(df_gei_cat) <- df_gei_cat[1, ]
+df_gei_cat <- df_gei_cat[-1, ]
+```
+
+#exporting the GEI data with categories as csv
+```{r}
+write.csv(df_gei_cat, "GEI_GEstatusCategories.csv")
+```
+
+
+
+## F0 data
+
+#loading f0 data
+```{r}
+df_f0 <- read.csv("F0_averaged.csv")
+names(df_f0)
+
+summary(df_f0)
+```
+
+# checking how many countries there are in the f0 data 
+```{r}
+country_names <- table(df_f0$Country)
+print(country_names)
+```
+
+
+# filtering the GEI data only with the countries that are also in the f0 data
+```{r}
+filtered_gei <- country_stat %>%
+  filter(Country %in% df_f0$Country)
+
+print(filtered_gei$Country)
+```
+
+#merging the GE status categories to the GEI data
+```{r}
+df_f0_cat <- merge(df_f0, filtered_gei, by = "Country", all = TRUE)
+df_f0_cat <- df_f0_cat[, c(2,3,1,7,4)]
+```
+
+#checking the counts of the categories
+```{r}
+cat_counting <- table(df_f0_cat$GE_status)
+print(cat_counting)
+```
+
+#exporting the averaged f0 data with categories as csv
+```{r}
+write.csv(df_f0_cat, "F0_averaged_GEstatusCategories.csv")
+```

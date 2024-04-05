@@ -1,0 +1,75 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+install.packages(Rmisc)
+install.packages("data.table")
+install.packages("stringr")
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("readxl")
+options(scipen = 999)
+---
+title: "LabPhon_Coding"
+author: "Myeongju"
+date: "2023-10-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressPackageStartupMessages(library(Rmisc))
+suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(readxl))
+options(scipen=999)
+```
+
+## Preprocessing
+
+# Defining a new function
+This enables us to subset later in a way such that we only keep the data which doesn't include the specified values.
+
+```{r}
+`%notin%` <- Negate(`%in%`)
+```
+
+# Data
+
+```{r pressure, echo=FALSE}
+df <- read_excel("Results_F0_Data.xlsx")
+names(df)
+```
+
+```{r}
+summary(df)
+```
+
+```{r}
+plot(density(df$`Mean(Hz)`, na.rm=TRUE))
+```
+# Separating the data set into DV subsets
+```{r}
+df_f0 <- df[, c("Year", "Country", "Mean(Hz)","StDev(Hz)")]
+```
+
+```{r}
+f0_averaged <- summarySE(df_f0, measurevar = "Mean(Hz)", groupvars = c("Year", "Country"), na.rm=T)
+f0_averaged <-f0_averaged[,c(1,2,4)]
+colnames(f0_averaged)[3] <- "avg_f0"
+newdata <- f0_averaged[-c(73), ]
+```
+
+```{r}
+summary(f0_averaged)
+summary(newdata)
+```
+
+```{r}
+write.csv(newdata, "F0_averaged.csv")
+```
+
+
