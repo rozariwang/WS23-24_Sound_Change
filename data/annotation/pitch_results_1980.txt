@@ -1,0 +1,16 @@
+File	Label	Start(s)	Duration(ms)	Center(Hz)	Mean(Hz)	StDev(Hz)	Min(Hz)	Med(Hz)	Max(Hz)	Voiced(%)
+1980_audio_denoised	Sweden	394.8203	16698.0	196.05	220.30	29.14	183.68	213.72	403.86	63
+1980_audio_denoised	Philippines	423.1271	11770.6	330.47	244.57	35.76	94.99	239.19	465.11	78
+1980_audio_denoised	New Zealand	448.6692	10642.8	NA	210.26	20.43	92.46	209.76	267.42	61
+1980_audio_denoised	Scotland	477.9229	14738.4	231.37	219.44	27.05	101.90	216.21	473.32	54
+1980_audio_denoised	USA	504.3393	23493.6	362.92	240.57	36.50	77.17	233.94	501.58	78
+
+Script: pitch_5_0_0.praat
+Analysis started: 02-Jan-24 15:03:38
+Tier: 1
+Labels: .
+Computation units: Hertz
+Step rate: 0.005 s
+Low F0: 75 Hz
+High F0: 500 Hz
+Minimal duration: 25 ms

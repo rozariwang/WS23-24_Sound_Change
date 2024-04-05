@@ -1,0 +1,19 @@
+File	Label	Start(s)	Duration(ms)	Center(Hz)	Mean(Hz)	StDev(Hz)	Min(Hz)	Med(Hz)	Max(Hz)	Voiced(%)
+2023_audio_denoised_denoised	Australia	32.1107	17856.2	NA	217.64	54.45	101.32	216.63	504.80	49
+2023_audio_denoised_denoised	Puerto Rico	94.8617	23699.7	243.33	225.03	43.86	81.94	220.25	490.59	57
+2023_audio_denoised_denoised	Nicaragua	162.2573	5999.2	198.49	230.88	52.14	97.77	219.24	440.61	63
+2023_audio_denoised_denoised	Nicaragua	175.5288	3573.7	189.59	206.43	42.21	75.18	208.49	302.04	62
+2023_audio_denoised_denoised	Nicaragua	188.1055	4053.4	NA	222.47	62.92	80.78	220.18	351.20	56
+2023_audio_denoised_denoised	Thailand	241.2487	25674.1	82.11	249.73	65.26	80.83	249.38	498.38	50
+2023_audio_denoised_denoised	Colombia	312.9099	10631.8	NA	227.50	49.57	79.52	223.46	460.41	61
+2023_audio_denoised_denoised	Colombia	333.6252	9711.3	228.08	246.04	56.74	117.90	238.23	488.82	48
+
+Script: pitch_5_0_0.praat
+Analysis started: 02-Jan-24 16:06:00
+Tier: 1
+Labels: .
+Computation units: Hertz
+Step rate: 0.005 s
+Low F0: 75 Hz
+High F0: 500 Hz
+Minimal duration: 25 ms

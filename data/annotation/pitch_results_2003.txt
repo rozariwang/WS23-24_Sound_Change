@@ -1,0 +1,19 @@
+File	Label	Start(s)	Duration(ms)	Center(Hz)	Mean(Hz)	StDev(Hz)	Min(Hz)	Med(Hz)	Max(Hz)	Voiced(%)
+2003_audio_denoised	Venezuela	34.3918	13062.3	281.56	267.55	31.61	124.16	269.64	341.58	79
+2003_audio_denoised	Venezuela	55.7483	6395.0	NA	257.08	21.21	204.33	254.22	337.32	73
+2003_audio_denoised	Japan	123.2700	5446.8	494.76	267.85	73.29	119.56	254.17	495.74	21
+2003_audio_denoised	Japan	131.5624	18869.6	206.75	254.30	57.21	104.29	236.94	480.29	51
+2003_audio_denoised	Japan	151.8495	1727.5	251.28	340.03	77.98	235.65	318.40	486.43	54
+2003_audio_denoised	South Africa	189.8178	17161.0	NA	244.95	35.01	102.42	242.04	322.97	58
+2003_audio_denoised	Dominican Republic	238.4580	15549.7	NA	206.17	25.07	76.63	201.48	500.08	71
+2003_audio_denoised	Serbia & Montenegro	311.4969	21437.1	237.43	226.10	30.78	75.62	222.30	485.00	68
+
+Script: pitch_5_0_0.praat
+Analysis started: 02-Jan-24 15:23:46
+Tier: 1
+Labels: .
+Computation units: Hertz
+Step rate: 0.005 s
+Low F0: 75 Hz
+High F0: 500 Hz
+Minimal duration: 25 ms

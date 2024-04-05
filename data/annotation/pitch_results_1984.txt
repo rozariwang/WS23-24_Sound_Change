@@ -1,0 +1,18 @@
+File	Label	Start(s)	Duration(ms)	Center(Hz)	Mean(Hz)	StDev(Hz)	Min(Hz)	Med(Hz)	Max(Hz)	Voiced(%)
+1984_audio	Philippines	26.2809	13056.0	NA	235.39	36.62	89.58	230.74	393.11	57
+1984_audio	Venezuela	61.9838	10028.5	261.43	251.80	30.89	124.86	248.83	348.25	82
+1984_audio	Sweden	103.8655	18731.4	211.90	200.44	27.58	75.00	203.61	257.58	45
+1984_audio	Sweden	124.0263	23237.8	210.04	208.00	32.03	76.48	206.24	402.16	48
+1984_audio	Sweden	148.3771	739.5	NA	222.88	16.15	193.28	225.85	256.91	74
+1984_audio	Colombia	169.0479	14974.7	227.09	245.35	23.33	79.57	245.21	367.59	81
+1984_audio	South Africa	213.5134	18455.2	NA	253.29	34.86	88.55	251.91	491.58	58
+
+Script: pitch_5_0_0.praat
+Analysis started: 02-Jan-24 15:09:46
+Tier: 1
+Labels: .
+Computation units: Hertz
+Step rate: 0.005 s
+Low F0: 75 Hz
+High F0: 500 Hz
+Minimal duration: 25 ms

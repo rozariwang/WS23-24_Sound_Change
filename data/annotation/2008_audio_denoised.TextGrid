@@ -1,0 +1,156 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 372.2623129251701 
+tiers? <exists> 
+size = 2 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "speaker" 
+        xmin = 0 
+        xmax = 372.2623129251701 
+        intervals: size = 33 
+        intervals [1]:
+            xmin = 0 
+            xmax = 43.299739229024944 
+            text = "" 
+        intervals [2]:
+            xmin = 43.299739229024944 
+            xmax = 45.807415356947374 
+            text = "Colombia" 
+        intervals [3]:
+            xmin = 45.807415356947374 
+            xmax = 54.17592970521542 
+            text = "" 
+        intervals [4]:
+            xmin = 54.17592970521542 
+            xmax = 76.94169729060009 
+            text = "Colombia" 
+        intervals [5]:
+            xmin = 76.94169729060009 
+            xmax = 77.6070379818594 
+            text = "" 
+        intervals [6]:
+            xmin = 77.6070379818594 
+            xmax = 79.66888930441287 
+            text = "Colombia" 
+        intervals [7]:
+            xmin = 79.66888930441287 
+            xmax = 114.99346026215365 
+            text = "" 
+        intervals [8]:
+            xmin = 114.99346026215365 
+            xmax = 136.76464067678353 
+            text = "Venezuela" 
+        intervals [9]:
+            xmin = 136.76464067678353 
+            xmax = 172.3554235242484 
+            text = "" 
+        intervals [10]:
+            xmin = 172.3554235242484 
+            xmax = 173.88396535358328 
+            text = "Dominican Republic" 
+        intervals [11]:
+            xmin = 173.88396535358328 
+            xmax = 176.3839250177683 
+            text = "" 
+        intervals [12]:
+            xmin = 176.3839250177683 
+            xmax = 187.02000959358102 
+            text = "Dominican Republic" 
+        intervals [13]:
+            xmin = 187.02000959358102 
+            xmax = 195.8722404224848 
+            text = "" 
+        intervals [14]:
+            xmin = 195.8722404224848 
+            xmax = 208.28262660619802 
+            text = "Dominican Republic" 
+        intervals [15]:
+            xmin = 208.28262660619802 
+            xmax = 219.45793841881323 
+            text = "" 
+        intervals [16]:
+            xmin = 219.45793841881323 
+            xmax = 220.98908816634 
+            text = "Dominican Republic" 
+        intervals [17]:
+            xmin = 220.98908816634 
+            xmax = 222.75489730758204 
+            text = "" 
+        intervals [18]:
+            xmin = 222.75489730758204 
+            xmax = 223.1795837961035 
+            text = "Dominican Republic" 
+        intervals [19]:
+            xmin = 223.1795837961035 
+            xmax = 224.034240283526 
+            text = "" 
+        intervals [20]:
+            xmin = 224.034240283526 
+            xmax = 225.33642764114194 
+            text = "Dominican Republic" 
+        intervals [21]:
+            xmin = 225.33642764114194 
+            xmax = 258.3524752502627 
+            text = "" 
+        intervals [22]:
+            xmin = 258.3524752502627 
+            xmax = 259.8026814058957 
+            text = "Mexico" 
+        intervals [23]:
+            xmin = 259.8026814058957 
+            xmax = 264.25121848739496 
+            text = "" 
+        intervals [24]:
+            xmin = 264.25121848739496 
+            xmax = 283.65122448979594 
+            text = "Mexico" 
+        intervals [25]:
+            xmin = 283.65122448979594 
+            xmax = 318.1140778533636 
+            text = "" 
+        intervals [26]:
+            xmin = 318.1140778533636 
+            xmax = 322.6641099773243 
+            text = "Russia" 
+        intervals [27]:
+            xmin = 322.6641099773243 
+            xmax = 327.57113473167044 
+            text = "" 
+        intervals [28]:
+            xmin = 327.57113473167044 
+            xmax = 331.05443826015255 
+            text = "Russia" 
+        intervals [29]:
+            xmin = 331.05443826015255 
+            xmax = 336.23937074829934 
+            text = "" 
+        intervals [30]:
+            xmin = 336.23937074829934 
+            xmax = 338.7379931972789 
+            text = "Russia" 
+        intervals [31]:
+            xmin = 338.7379931972789 
+            xmax = 341.8827203325775 
+            text = "" 
+        intervals [32]:
+            xmin = 341.8827203325775 
+            xmax = 342.35237528344675 
+            text = "Russia" 
+        intervals [33]:
+            xmin = 342.35237528344675 
+            xmax = 372.2623129251701 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "utterances" 
+        xmin = 0 
+        xmax = 372.2623129251701 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 372.2623129251701 
+            text = "" 
