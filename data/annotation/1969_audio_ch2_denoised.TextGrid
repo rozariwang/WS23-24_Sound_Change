@@ -1,0 +1,108 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 390.51319727891155 
+tiers? <exists> 
+size = 2 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "speaker" 
+        xmin = 0 
+        xmax = 390.51319727891155 
+        intervals: size = 21 
+        intervals [1]:
+            xmin = 0 
+            xmax = 126.26656263342159 
+            text = "" 
+        intervals [2]:
+            xmin = 126.26656263342159 
+            xmax = 126.8311406046361 
+            text = "Finland" 
+        intervals [3]:
+            xmin = 126.8311406046361 
+            xmax = 142.4664800109408 
+            text = "" 
+        intervals [4]:
+            xmin = 142.4664800109408 
+            xmax = 160.0939979297428 
+            text = "Finland" 
+        intervals [5]:
+            xmin = 160.0939979297428 
+            xmax = 193.99466765768037 
+            text = "" 
+        intervals [6]:
+            xmin = 193.99466765768037 
+            xmax = 195.35964476396617 
+            text = "Israel" 
+        intervals [7]:
+            xmin = 195.35964476396617 
+            xmax = 208.06104670571932 
+            text = "" 
+        intervals [8]:
+            xmin = 208.06104670571932 
+            xmax = 211.76530190555755 
+            text = "Israel" 
+        intervals [9]:
+            xmin = 211.76530190555755 
+            xmax = 220.49735556671408 
+            text = "" 
+        intervals [10]:
+            xmin = 220.49735556671408 
+            xmax = 228.9642330674145 
+            text = "Israel" 
+        intervals [11]:
+            xmin = 228.9642330674145 
+            xmax = 265.19615740562136 
+            text = "" 
+        intervals [12]:
+            xmin = 265.19615740562136 
+            xmax = 266.44923491717736 
+            text = "Australia" 
+        intervals [13]:
+            xmin = 266.44923491717736 
+            xmax = 269.57545885503964 
+            text = "" 
+        intervals [14]:
+            xmin = 269.57545885503964 
+            xmax = 270.08586378737544 
+            text = "Australia" 
+        intervals [15]:
+            xmin = 270.08586378737544 
+            xmax = 274.03790727171184 
+            text = "" 
+        intervals [16]:
+            xmin = 274.03790727171184 
+            xmax = 276.2566486967547 
+            text = "Australia" 
+        intervals [17]:
+            xmin = 276.2566486967547 
+            xmax = 303.8105483339833 
+            text = "" 
+        intervals [18]:
+            xmin = 303.8105483339833 
+            xmax = 313.47656098239156 
+            text = "Philippines" 
+        intervals [19]:
+            xmin = 313.47656098239156 
+            xmax = 360.96272363070113 
+            text = "" 
+        intervals [20]:
+            xmin = 360.96272363070113 
+            xmax = 371.4908845780829 
+            text = "Japan" 
+        intervals [21]:
+            xmin = 371.4908845780829 
+            xmax = 390.51319727891155 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "utterances" 
+        xmin = 0 
+        xmax = 390.51319727891155 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 390.51319727891155 
+            text = "" 

@@ -1,0 +1,204 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 334.13514739229026 
+tiers? <exists> 
+size = 2 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "speaker" 
+        xmin = 0 
+        xmax = 334.13514739229026 
+        intervals: size = 45 
+        intervals [1]:
+            xmin = 0 
+            xmax = 105.75098056976269 
+            text = "" 
+        intervals [2]:
+            xmin = 105.75098056976269 
+            xmax = 109.36153200004904 
+            text = "Finland" 
+        intervals [3]:
+            xmin = 109.36153200004904 
+            xmax = 113.11360935075813 
+            text = "" 
+        intervals [4]:
+            xmin = 113.11360935075813 
+            xmax = 114.48732870535231 
+            text = "Finland" 
+        intervals [5]:
+            xmin = 114.48732870535231 
+            xmax = 134.99977664509146 
+            text = "" 
+        intervals [6]:
+            xmin = 134.99977664509146 
+            xmax = 136.41935969318538 
+            text = "Holland" 
+        intervals [7]:
+            xmin = 136.41935969318538 
+            xmax = 138.55774648149676 
+            text = "" 
+        intervals [8]:
+            xmin = 138.55774648149676 
+            xmax = 140.80699901423606 
+            text = "Holland" 
+        intervals [9]:
+            xmin = 140.80699901423606 
+            xmax = 144.09034222952482 
+            text = "" 
+        intervals [10]:
+            xmin = 144.09034222952482 
+            xmax = 149.62150279858093 
+            text = "Holland" 
+        intervals [11]:
+            xmin = 149.62150279858093 
+            xmax = 151.3891560906007 
+            text = "" 
+        intervals [12]:
+            xmin = 151.3891560906007 
+            xmax = 156.75270786004884 
+            text = "Holland" 
+        intervals [13]:
+            xmin = 156.75270786004884 
+            xmax = 159.4675407694714 
+            text = "" 
+        intervals [14]:
+            xmin = 159.4675407694714 
+            xmax = 162.51058563184964 
+            text = "Holland" 
+        intervals [15]:
+            xmin = 162.51058563184964 
+            xmax = 186.72171861695557 
+            text = "" 
+        intervals [16]:
+            xmin = 186.72171861695557 
+            xmax = 187.81999099840925 
+            text = "Sweden" 
+        intervals [17]:
+            xmin = 187.81999099840925 
+            xmax = 189.0021232637516 
+            text = "" 
+        intervals [18]:
+            xmin = 189.0021232637516 
+            xmax = 189.37835170174682 
+            text = "Sweden" 
+        intervals [19]:
+            xmin = 189.37835170174682 
+            xmax = 191.665100205159 
+            text = "" 
+        intervals [20]:
+            xmin = 191.665100205159 
+            xmax = 193.03500747650315 
+            text = "Sweden" 
+        intervals [21]:
+            xmin = 193.03500747650315 
+            xmax = 195.7435002350518 
+            text = "" 
+        intervals [22]:
+            xmin = 195.7435002350518 
+            xmax = 196.0504469154934 
+            text = "Sweden" 
+        intervals [23]:
+            xmin = 196.0504469154934 
+            xmax = 198.02325035212476 
+            text = "" 
+        intervals [24]:
+            xmin = 198.02325035212476 
+            xmax = 198.29548793097766 
+            text = "Sweden" 
+        intervals [25]:
+            xmin = 198.29548793097766 
+            xmax = 222.147924384073 
+            text = "" 
+        intervals [26]:
+            xmin = 222.147924384073 
+            xmax = 223.04597875525508 
+            text = "Thailand" 
+        intervals [27]:
+            xmin = 223.04597875525508 
+            xmax = 224.3950938158874 
+            text = "" 
+        intervals [28]:
+            xmin = 224.3950938158874 
+            xmax = 224.63260629543242 
+            text = "Thailand" 
+        intervals [29]:
+            xmin = 224.63260629543242 
+            xmax = 229.15185378605955 
+            text = "" 
+        intervals [30]:
+            xmin = 229.15185378605955 
+            xmax = 229.48671292841811 
+            text = "Thailand" 
+        intervals [31]:
+            xmin = 229.48671292841811 
+            xmax = 234.4741458641433 
+            text = "" 
+        intervals [32]:
+            xmin = 234.4741458641433 
+            xmax = 235.4841515479481 
+            text = "Thailand" 
+        intervals [33]:
+            xmin = 235.4841515479481 
+            xmax = 242.000384338195 
+            text = "" 
+        intervals [34]:
+            xmin = 242.000384338195 
+            xmax = 243.02386314539098 
+            text = "Thailand" 
+        intervals [35]:
+            xmin = 243.02386314539098 
+            xmax = 244.18393769076835 
+            text = "" 
+        intervals [36]:
+            xmin = 244.18393769076835 
+            xmax = 244.7114005120014 
+            text = "Thailand" 
+        intervals [37]:
+            xmin = 244.7114005120014 
+            xmax = 246.68790521445263 
+            text = "" 
+        intervals [38]:
+            xmin = 246.68790521445263 
+            xmax = 248.60011603274705 
+            text = "Thailand" 
+        intervals [39]:
+            xmin = 248.60011603274705 
+            xmax = 270.2453636778525 
+            text = "" 
+        intervals [40]:
+            xmin = 270.2453636778525 
+            xmax = 272.6492312020131 
+            text = "USA" 
+        intervals [41]:
+            xmin = 272.6492312020131 
+            xmax = 275.9781075044111 
+            text = "" 
+        intervals [42]:
+            xmin = 275.9781075044111 
+            xmax = 276.7844708685677 
+            text = "USA" 
+        intervals [43]:
+            xmin = 276.7844708685677 
+            xmax = 284.6090864352327 
+            text = "" 
+        intervals [44]:
+            xmin = 284.6090864352327 
+            xmax = 287.0515213493595 
+            text = "USA" 
+        intervals [45]:
+            xmin = 287.0515213493595 
+            xmax = 334.13514739229026 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "utterances" 
+        xmin = 0 
+        xmax = 334.13514739229026 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 334.13514739229026 
+            text = "" 
