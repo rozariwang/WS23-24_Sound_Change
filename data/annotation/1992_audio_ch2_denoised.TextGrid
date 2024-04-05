@@ -1,0 +1,76 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 376.07038548752837 
+tiers? <exists> 
+size = 2 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "speaker" 
+        xmin = 0 
+        xmax = 376.07038548752837 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 16.861874527588814 
+            text = "" 
+        intervals [2]:
+            xmin = 16.861874527588814 
+            xmax = 36.97125283446712 
+            text = "Netherlands" 
+        intervals [3]:
+            xmin = 36.97125283446712 
+            xmax = 95.95209750566895 
+            text = "" 
+        intervals [4]:
+            xmin = 95.95209750566895 
+            xmax = 119.52746031746032 
+            text = "Belgium" 
+        intervals [5]:
+            xmin = 119.52746031746032 
+            xmax = 158.2309410430839 
+            text = "" 
+        intervals [6]:
+            xmin = 158.2309410430839 
+            xmax = 179.59588183421516 
+            text = "India" 
+        intervals [7]:
+            xmin = 179.59588183421516 
+            xmax = 217.2247590702948 
+            text = "" 
+        intervals [8]:
+            xmin = 217.2247590702948 
+            xmax = 231.3225787351978 
+            text = "Venezuela" 
+        intervals [9]:
+            xmin = 231.3225787351978 
+            xmax = 275.6123914181057 
+            text = "" 
+        intervals [10]:
+            xmin = 275.6123914181057 
+            xmax = 298.8268820861678 
+            text = "Namibia" 
+        intervals [11]:
+            xmin = 298.8268820861678 
+            xmax = 338.78462585034015 
+            text = "" 
+        intervals [12]:
+            xmin = 338.78462585034015 
+            xmax = 347.9777739984883 
+            text = "Colombia" 
+        intervals [13]:
+            xmin = 347.9777739984883 
+            xmax = 376.07038548752837 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "utterances" 
+        xmin = 0 
+        xmax = 376.07038548752837 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 376.07038548752837 
+            text = "" 
