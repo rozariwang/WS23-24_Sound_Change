@@ -1,0 +1,150 @@
+---
+title: "Untitled"
+author: "Myeongju"
+date: "2024-04-05"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressPackageStartupMessages(library(Rmisc))
+suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(readxl))
+suppressPackageStartupMessages(library(tibble))
+options(scipen=999)
+```
+
+# Defining a new function
+This enables us to subset later in a way such that we only keep the data which doesn't include the specified values.
+
+```{r}
+`%notin%` <- Negate(`%in%`)
+```
+
+
+# GEI data
+## loading GEI data
+```{r pressure, echo=FALSE}
+df_gei <- read.csv("combined_df1_1950_2021.csv")
+names(df_gei)
+```
+
+## correcting country names containing a period: Central African Republic, Costa Rica, Dominican Republic, El Salvador, New Zealand, Saudi Arabia, Sierra Leone, South Africa, South Korea, Sri Lanka, Trinidad and Tobago, United Arab Emirates, United Kingdom, United States, 
+```{r}
+colnames(df_gei)[31] <- "Central African Republic"
+colnames(df_gei)[88] <- "Costa Rica"
+colnames(df_gei)[62] <- "Dominican Republic"
+colnames(df_gei)[48] <- "El Salvador"
+colnames(df_gei)[83] <- "New Zealand"
+colnames(df_gei)[9] <- "Saudi Arabia"
+colnames(df_gei)[76] <- "Sierra Leone"
+colnames(df_gei)[102] <- "South Africa"
+colnames(df_gei)[23] <- "South Korea"
+colnames(df_gei)[92] <- "Sri Lanka"
+colnames(df_gei)[29] <- "Trinidad and Tobago"
+colnames(df_gei)[82] <- "United Arab Emirates"
+colnames(df_gei)[14] <- "United Kingdom"
+colnames(df_gei)[85] <- "United States"
+
+names(df_gei)
+```
+## change the first column (year) into the row names
+```{r}
+rownames(df_gei) <- df_gei$year
+df_gei <- df_gei[, -1]
+```
+
+## extract summary stats of each year
+```{r}
+summary_year <- apply(df_gei, 1, summary)
+```
+
+
+## add 1st and 3rd Quarter of each year to the dataframe
+```{r}
+for (key in names(summary_year)) {
+  value <- summary_year[[key]]['1st Qu.']
+  df_gei[key,"1st Qu."] <- value
+}
+
+for (key in names(summary_year)) {
+  value <- summary_year[[key]]['3rd Qu.']
+  df_gei[key,"3rd Qu."] <- value
+}
+```
+
+
+
+
+# F0 data
+## load f0 data
+```{r}
+df_f0 <- read.csv("F0_averaged.csv")
+names(df_f0)
+
+summary(df_f0)
+```
+
+## remove the year 2023
+```{r}
+df_f0 <- df_f0[df_f0$Year < 2023, ]
+```
+
+## check how many countries there are in the f0 data 
+```{r}
+country_names <- as.data.frame(table(df_f0$Country))
+
+colnames(country_names)[1] <- "Country"
+colnames(country_names)[2] <- "Counts"
+```
+
+## add the GEI value for each country in a new column
+```{r}
+for (i in 1:nrow(df_f0)) {
+  year_id <- df_f0$Year[i]
+  country_id <- df_f0$Country[i]
+  equal_value <- df_gei[row.names(df_gei) == year_id, country_id]
+  if (country_id %notin% names(df_gei)) {
+    df_f0[i, "GEI"] <- NA
+    print(paste("Equality valule of ", country_id, "in year ", year_id, "is not there"))}
+  else {
+    df_f0[i, "GEI"] <- equal_value
+    print(paste("Equality valule of ", country_id, "in year ", year_id, "is", equal_value))}
+}
+```
+
+## add the GEI statistics for each year in a new column
+```{r}
+for (i in 1:nrow(df_f0)) {
+  year_id <- df_f0$Year[i]
+  first_qu <- df_gei[row.names(df_gei) == year_id, "1st Qu."]
+  third_qu <- df_gei[row.names(df_gei) == year_id, "3rd Qu."]
+  df_f0[i, "1st Qu."] <- first_qu
+  df_f0[i, "3rd Qu."] <- third_qu
+}
+```
+
+
+## add categories to each country taking into account each year's GEI statistics
+```{r}
+for (i in 1:nrow(df_f0)) {
+  GEIvalue <- df_f0[i, 5]
+  first_qu <- df_f0[i, 6]
+  third_qu <- df_f0[i, 7]
+  status <- case_when(
+    GEIvalue < first_qu ~ "Low",
+    GEIvalue >= first_qu & GEIvalue < third_qu ~ "Medium",
+    GEIvalue >= third_qu ~ "High")
+  df_f0[i, "GE_status"] <- status
+}
+```
+
+
+#exporting the averaged f0 data with categories as csv
+```{r}
+write.csv(df_f0, "NEW_F0_averaged_GEstatusCategories.csv")
+```
