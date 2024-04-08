@@ -75,6 +75,16 @@ for (key in names(summary_year)) {
   value <- summary_year[[key]]['3rd Qu.']
   df_gei[key,"3rd Qu."] <- value
 }
+
+for (key in names(summary_year)) {
+  value <- summary_year[[key]]['Mean']
+  df_gei[key,"Mean"] <- value
+}
+```
+
+## exporting the averaged f0 data with categories as csv
+```{r}
+write.csv(df_gei, "NEW_GEI_combined_with_stats.csv")
 ```
 
 
@@ -123,8 +133,10 @@ for (i in 1:nrow(df_f0)) {
   year_id <- df_f0$Year[i]
   first_qu <- df_gei[row.names(df_gei) == year_id, "1st Qu."]
   third_qu <- df_gei[row.names(df_gei) == year_id, "3rd Qu."]
+  year_mean <- df_gei[row.names(df_gei) == year_id, "Mean"]
   df_f0[i, "1st Qu."] <- first_qu
   df_f0[i, "3rd Qu."] <- third_qu
+  df_f0[i, "Mean"] <- year_mean
 }
 ```
 
@@ -144,7 +156,7 @@ for (i in 1:nrow(df_f0)) {
 ```
 
 
-#exporting the averaged f0 data with categories as csv
+## exporting the averaged f0 data with categories as csv
 ```{r}
 write.csv(df_f0, "NEW_F0_averaged_GEstatusCategories.csv")
 ```
